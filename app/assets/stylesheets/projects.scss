@@ -1,3 +1,46 @@
 // Place all the styles related to the projects controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+	margin: 0;
+}
+a {
+	text-decoration: none;
+	color: black;
+}
+.container {
+	min-width: 75%;
+	width: 1000px;
+	max-width: 100%;
+	margin: 0 auto;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
+
+
+.projectCard {
+	margin: 20px;
+	width: 300px;
+	height: 300px;
+	padding: 10px;
+	border-radius: 10px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-start;
+	h1 {
+		text-align: center;
+	}
+	p {
+		text-align: justify;
+	}
+	&:hover {
+		background-color: rgba(240,240,240,0.8);
+	}
+	.logo {
+		max-height: 80px;
+	}
+
+}
