@@ -1,12 +1,47 @@
 
-<div class="container">	
-	<% @projects.each do |project| %>
-		<%= link_to "#{project.link}" do %>
-			<div class="projectCard">
-				<%= image_tag "#{project.image}", class: "logo"%>
-				<h1><%= project.name %></h1>
-				<p><%= project.description %></p>
-			</div>
-		<% end %>
+
+<div class="firstscreen">
+	<h2>Jasper Brumter</h2>
+</div>
+
+<div class="header">
+	<% 800.times do %>
+		<div class="star" style="left: <%= rand(1..10000) /100.0 %>%; top: <%= rand(1..10000)/100.0 %>%">
+		</div>
 	<% end %>
 </div>
+<div class="textContainer">
+
+	<h3>Welcome to my Portfolio</h3>
+	<div class="subtitle"></div>
+	<p><u>Disclaimer:</u> Any constellations in the above image is purely fortuitous! The stars are 800 randomly placed divs and will change place on every refresh.<br>Actually, nearly all the content on this page is dynamic and might change if you refresh the page. The projects listed next will change order. I think having websites that change every time you visit them is nice!</p>
+
+
+	<h3>My Projects</h3>
+	<div class="subtitle"></div>
+	<div class="projectContainer">	
+		<% @projects.each do |project| %>
+			<%= link_to "#{project.link}" do %>
+				<div class="projectCard">
+					<%= image_tag "#{project.image}", class: "logo"%>
+					<h3><%= project.name %></h3>
+					<p><%= project.description %></p>
+				</div>
+			<% end %>
+		<% end %>
+	</div>
+</div>
+
+
+<script>
+	//after 1.2s fade out, after .5s remove
+  document.addEventListener("DOMContentLoaded", function(e) {
+  	setTimeout(function () {
+	  document.querySelector(".firstscreen").classList.add("fade")
+	  setTimeout(function () {
+		  document.querySelector(".firstscreen").classList.add("hidden")
+		}, 500);
+	}, 1200);
+
+  });
+</script>

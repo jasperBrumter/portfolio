@@ -46,7 +46,7 @@ Project.create({
 })
 
 Project.create({
-	name: "Camondo picking algorithm",
+	name: "Camondo algorithm",
 	description:"Based on a real problem: students rank their professors in order to make groups for final-projects. This algorithm produces a distribution that satisfies their preferences at best.",
 	image: "ruby.png",
 	link: "#"
