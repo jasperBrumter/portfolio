@@ -6,15 +6,27 @@
 
 <div class="header">
 	<% 800.times do %>
-		<div class="star" style="left: <%= rand(1..10000) /100.0 %>%; top: <%= rand(1..10000)/100.0 %>%">
+		<% if rand(10) < 8 %>
+		<% random = 1 %>
+		<% elsif rand(10) < 7 %>
+		<% random = 2 %>
+		<% else %>
+		<% random = 3 %>
+		<% end %>
+		<% color = 100 + rand(155) %>
+		<div class="star" style="left: <%= rand(1..10000) /100.0 %>%; top: <%= rand(1..10000)/100.0 %>%; width: <%= random %>px; height: <%= random %>px; background-color: rgb(<%= color %>,<%= color %>,<%= color %>);">
+		</div>
+	<% end %>
+	<% 10.times do |i| %>
+		<div class="shootingStar" style="left: <%= -10 +(i/2.0) %>%; top: 50%; height: <%= i/2 %>px; width: <%= i/2 %>px" >
 		</div>
 	<% end %>
 </div>
 <div class="textContainer">
 
 	<h3>Welcome to my Portfolio</h3>
-	<div class="subtitle"></div>
-	<p><u>Disclaimer:</u> Any constellations in the above image is purely fortuitous! The stars are 800 randomly placed divs and will change place on every refresh.<br>Actually, nearly all the content on this page is dynamic and might change if you refresh the page. The projects listed next will change order. I think having websites that change every time you visit them is nice!</p>
+	<div class="subtitle"></div><br>
+	<p><u>Disclaimer:</u> Any constellations in the above image is purely fortuitous! The stars are 800 randomly placed divs that will change place on every refresh. Please send me a screenshot if you notice anything in the above starry night!<br><br>Actually, nearly all the content on this page is dynamic and might change if you refresh the page. I enjoy the idea of content changing everytime you visit a page, of not having the same user experience. Thus projects listed next will change order if you refresh: no project is more important than the other, one may say.</p><br><br>
 
 
 	<h3>My Projects</h3>
@@ -44,4 +56,57 @@
 	}, 1200);
 
   });
+
+var star1 = document.querySelectorAll(".shootingStar");
+var speedX = 1 + Math.random()
+var speedY = Math.random()
+
+
+setTimeout(function () {
+		for (var i = 0; i < star1.length; i++) {
+			var curPosX = star1[i].style.left;
+			curPosX = curPosX.split("%")[0];
+			curPosX = parseFloat(curPosX) + speedX;
+			curPosX = curPosX.toString() + "%";
+			star1[i].style.left=curPosX;
+			var curPosY = star1[i].style.top;
+			curPosY = curPosY.split("%")[0];
+			curPosY = parseFloat(curPosY) + speedY;
+			curPosY = curPosY.toString() + "%";
+			star1[i].style.top=curPosY;
+		}
+	    setTimeout(arguments.callee, 1);
+	}, 2000);
+
+
+(function(){
+	if (Math.random() < .5) {
+		speedY = -1 + Math.random()
+	}
+	else {
+		speedY = Math.random()
+	}
+	if (Math.random() < .5) {
+		var top = (Math.random() * 100)
+		for (var i = 0; i < star1.length; i++) {
+			star1[i].style.left = (-10 +(i/2.0)).toString() + "%";
+			star1[i].style.top = (top + (speedY * i/2)).toString() + "%";
+		}
+		speedX = 1 + Math.random()
+
+	}
+	else {
+		var top = (Math.random() * 100)
+		for (var i = 0; i < star1.length; i++) {
+			star1[i].style.left = (110 -(i/2.0)).toString() + "%";
+			star1[i].style.top = (top + (speedY * i/2)).toString() + "%";
+		}
+		speedX = -2 + Math.random()
+	}
+    // do some stuff
+    setTimeout(arguments.callee, 2000 + Math.random() * 5000);
+		
+})();
+
+
 </script>
