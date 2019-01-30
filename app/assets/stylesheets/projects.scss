@@ -33,7 +33,6 @@ a {
 .star {
 	position: absolute;
 	border-radius: 50%;
-	
 }
 
 .shootingStar {
@@ -67,11 +66,32 @@ a {
 	background-color: black;
 }
 
+.pdf_button {
+	margin: 0 auto;
+	border: 2px solid rgb(20, 20, 70);
+	color: rgb(20, 20, 70);
+	border-radius: 15px;
+	width: 220px;
+	height: 60px;
+	font-size: 18px;
+	font-weight: bolder;
+	letter-spacing: 2px;
+	transition: .3s ease;
+	background-color: rgb(220,220,220);
+
+	&:hover {
+		background-color: rgb(20, 20, 70);
+		color: rgb(220,220,220);
+	}
+}
+
 .projectContainer {
 	width: 100%;
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-around;
+	align-items: flex-start;
+	column-count: 3;
 }
 
 
@@ -84,15 +104,19 @@ a {
 	flex-direction: column;
 	align-items: center;
 	justify-content: flex-start;
+
+	&:hover {
+		background-color: rgba(240,240,240,0.8);
+	}
+
+
 	h1 {
 		text-align: center;
 	}
 	p {
 		text-align: justify;
 	}
-	&:hover {
-		background-color: rgba(240,240,240,0.8);
-	}
+	
 	.logo {
 		max-height: 80px;
 	}

@@ -26,13 +26,33 @@
 
 	<h3>Welcome to my Portfolio</h3>
 	<div class="subtitle"></div><br>
-	<p><u>Disclaimer:</u> Any constellations in the above image is purely fortuitous! The stars are 800 randomly placed divs that will change place on every refresh. Please send me a screenshot if you notice anything in the above starry night!<br><br>Actually, nearly all the content on this page is dynamic and might change if you refresh the page. I enjoy the idea of content changing everytime you visit a page, of not having the same user experience. Thus projects listed next will change order if you refresh: no project is more important than the other, one may say.</p><br><br>
-
+	<p><u>Disclaimer:</u> Any constellations in the above image is purely fortuitous! The stars are 800 divs generated with embedded Ruby. If you hit refresh, they will be changed forever. They have random coordinates, size (between 1px and 3px, weighted towards the prior) and color (along the grey-scale). The shooting stars - make a wish! - will also randomly appear with JavaScript. They have randomized speed and direction. It's fairly easy to suppose that you have a unique sky on your screen, nobody has ever seen a sky exactly like that ever before! That is how much I value your visit on my Portfolio!<br><br>Actually, nearly all the content on this page is dynamic and will change if you refresh the page. (Except my resume, thankfully.) The projects are listed in a random order, as I do not wish to emphasize one above the other. Having dynamic content on a website is very easy thanks to Ruby on Rails, which I've learned while following Le Wagon's Full-Stack Web Developer bootcamp in Montreal. I personally very much enjoy adding a layer of randomness to ensure a unique experience for every single user.</p><br><br>
+	
+	<center>
+		<%= link_to asset_path("CV2018.pdf", skip_pipeline: true) do%>
+			<button class="pdf_button">Curriculum Vitae</button>
+		<% end %>
+	</center>	 
 
 	<h3>My Projects</h3>
 	<div class="subtitle"></div>
 	<div class="projectContainer">	
 		<% @projects.each do |project| %>
+			<%= link_to "#{project.link}" do %>
+				<div class="projectCard">
+					<%= image_tag "#{project.image}", class: "logo"%>
+					<h3><%= project.name %></h3>
+					<p><%= project.description %></p>
+				</div>
+			<% end %>
+		<% end %>
+	</div>
+	<br><br>
+
+	<h3>My Works in Progress</h3>
+	<div class="subtitle"></div>
+	<div class="projectContainer">	
+		<% @works.each do |project| %>
 			<%= link_to "#{project.link}" do %>
 				<div class="projectCard">
 					<%= image_tag "#{project.image}", class: "logo"%>
@@ -90,7 +110,7 @@ setTimeout(function () {
 		var top = (Math.random() * 100)
 		for (var i = 0; i < star1.length; i++) {
 			star1[i].style.left = (-10 +(i/2.0)).toString() + "%";
-			star1[i].style.top = (top + (speedY * i/2)).toString() + "%";
+			star1[i].style.top = (top + (speedY * i/4)).toString() + "%";
 		}
 		speedX = 1 + Math.random()
 
@@ -99,7 +119,7 @@ setTimeout(function () {
 		var top = (Math.random() * 100)
 		for (var i = 0; i < star1.length; i++) {
 			star1[i].style.left = (110 -(i/2.0)).toString() + "%";
-			star1[i].style.top = (top + (speedY * i/2)).toString() + "%";
+			star1[i].style.top = (top + (speedY * i/4)).toString() + "%";
 		}
 		speedX = -2 + Math.random()
 	}

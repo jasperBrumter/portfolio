@@ -8,6 +8,7 @@
 
 puts "destroying previous projects.."
 Project.destroy_all
+Working.destroy_all
 
 puts "adding new projects"
 Project.create({
@@ -38,12 +39,6 @@ Project.create({
 	link: "https://github.com/jasperBrumter/liars-dice.ruby"
 })
 
-Project.create({
-	name: "Rails liar",
-	description: "A version of Liar's Dice on website. Work in progress, currently working on React.js in order to play entire game without refreshing. ps: did you notice the palindrome?",
-	image: "rails.png",
-	link: "#"
-})
 
 Project.create({
 	name: "Camondo algorithm",
@@ -52,4 +47,36 @@ Project.create({
 	link: "#"
 })
 
+Project.create({
+	name: "Derails",
+	description:"Platform for getting your bike fixed at home, rather than having to find a repair store and hauling the broken bike all the way there! The first ruby on (de)rails bike website! (probably)",
+	image: "derails-logo-1.png",
+	link: "https://shielded-wildwood-48595.herokuapp.com/"
+})
+
+puts "Creating works in progress"
+Working.create({
+	name: "Rails liar",
+	description: "A version of Liar's Dice on website. Work in progress, currently working on React.js in order to play entire game without refreshing. ps: did you notice the palindrome?",
+	image: "rails.png",
+	link: "#"
+})
+
+Working.create({
+	name: "Dorner Design",
+	description: "Website for a hugely famous and popular Interior Designer and Architect: Marie Christine Dorner, my mother...",
+	image: "oneshape.jpg",
+	link: "https://www.dorner-design.com/"
+})
+
+Working.create({
+	name: "Venere mais courtois",
+	description: "Website for brand new newspaper in France.",
+	image: "venere.jpg",
+	link: "#"
+})
+
 puts "created #{Project.all.count} projects"
+puts "created #{Working.all.count} works in progress"
+
+
