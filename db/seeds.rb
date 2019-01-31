@@ -26,6 +26,13 @@ Project.create({
 })
 
 Project.create({
+	name: "Scrabble Word Scraper",
+	description: "The first versions of Scrabble Helper did not have a sufficiently large database of words, especially French (from feedback). This program cures this problem by scraping websites for much more valid Scrabble words: over 300,000.",
+	image: "scrabble.png",
+	link: "https://github.com/jasperBrumter/scrabble-word-scraper/wiki"
+})
+
+Project.create({
 	name: "Crewin",
 	description: "Corporate website for upcoming company. Why use Wordpress when you can get me to make your website for virtually nothing?",
 	image: "heroku.png",
