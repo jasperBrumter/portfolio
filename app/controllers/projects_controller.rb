@@ -5,4 +5,7 @@ class ProjectsController < ApplicationController
   	works = Working.all.count
   	@works = Working.all.sample(works)
   end
+
+  def ecard
+  end
 end

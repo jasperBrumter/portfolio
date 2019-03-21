@@ -1,0 +1,93 @@
+
+
+$primarydark: rgb(34,26,27);
+$primarypurple: rgb(49,9,46);
+$primarymauve: rgb(76,16,34);
+$primarybrown: rgb(126,64,41);
+$primarygold: rgb(225,184,125);
+$primarywhite: rgb(245,245,245);
+$primarygray: rgb(120,120,120);
+
+
+body {
+	background-color: $primarydark;
+}
+
+.hidden {
+	display: none !important;
+}
+
+.ecardback {
+	background-color: $primarydark;
+	width: 95vw;
+	max-width: 1200px;
+	margin: 20px auto;
+	border: 1px solid $primarygray;
+	border-radius: 10px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-start;
+}
+
+.ecardtop {
+	width: 100%;
+	height: 150px;
+	border-radius: 10px 10px 0 0;
+	display: flex;
+	p {
+		color: $primarygold;
+		text-align: center;
+	}
+	.ecardtopleft {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		flex: 1 0 33%;
+	}
+	.ecardtopcenter {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		flex: 1 0 33%;
+	}
+	.ecardtopright {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		flex: 1 0 33%;
+		flex-wrap: wrap;
+	}	
+}
+
+.ecardnav {
+	width: 100%;
+	height: 80px;
+	display: flex;
+	p.active {
+		color: $primarywhite;
+		text-align: center;
+		font-weight: bold;
+	}
+	.nav1, .nav2, .nav3, .nav4 {
+		color: $primarygold;
+		text-align: center;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		flex: 1 0 25%;
+		&:hover {
+			color: $primarywhite;
+		}
+	}
+}
+.ecardcontent1, .ecardcontent2, .ecardcontent3, .ecardcontent4 {
+	width: 90%;
+	height: 200px;
+	margin: 0 auto 20px auto;
+	background-color: white;
+}
