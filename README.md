@@ -1,24 +1,42 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+
+** Versioning **
 
 * Ruby version
+-> ruby 2.5.3
 
-* System dependencies
+* Rails version
+-> Rails 5.2.2
 
-* Configuration
 
-* Database creation
 
-* Database initialization
+** Github **
 
-* How to run the test suite
+`bundle`
 
-* Services (job queues, cache servers, search engines, etc.)
+`git add .`
+`git commit -m "any change"`
+`git push`
 
-* Deployment instructions
 
-* ...
+
+** Heroku **
+
+confirm there is a remote named Heroku has been set for your app
+`git remote -v`
+heroku	https://git.heroku.com/jasperbrumter.git (fetch)
+heroku	https://git.heroku.com/jasperbrumter.git (push)'
+
+if not, add it
+`heroku git:remote -a jasperbrumter`
+
+deploy your master branch to heroku
+`git push heroku master`
+
+deploy a test-branch to heroku
+`git push heroku testbranch:master`
+
+if needed,
+`heroku run db:seed`

@@ -12,6 +12,13 @@ Working.destroy_all
 
 puts "adding new projects"
 Project.create({
+	name: "Piano Guys",
+	description: "Vue JS website designed showcasing the work of Piano Artisans. Progressive Web App with i18n internationalization, all SEO practices.",
+	image: "pianoguys.png",
+	link: "https://pianoguys.ca"
+});
+
+Project.create({
 	name: "Travel Album",
 	description: "Responsive website for showcasing travel pictures. Includes a slideshow coded entirely in Javascript (no Bootstrap at all). By the way, I didn't take these pictures, but I've visited all of these countries!",
 	image: "heroku.png",
