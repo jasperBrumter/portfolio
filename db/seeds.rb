@@ -12,15 +12,22 @@ Working.destroy_all
 
 puts "adding new projects"
 Project.create({
+  name: "Vue Docs",
+  description: "Vue Mastery tutorials had a trial week for free. I got the IDs of their videos via the Networks Developer Tools and made my own website available any time (only for personal reference).",
+  image: "vue-logo.png",
+  link: "http://jaspers-vue-docs.herokuapp.com"
+});
+
+Project.create({
 	name: "Piano Guys",
-	description: "Vue JS website designed showcasing the work of Piano Artisans. Progressive Web App with i18n internationalization, all SEO practices.",
+	description: "Vue JS website designed showcasing the work of Piano Artisans. Progressive Web App with i18n internationalization English & French, all SEO practices.",
 	image: "pianoguys.png",
 	link: "https://pianoguys.ca"
 });
 
 Project.create({
 	name: "Travel Album",
-	description: "Responsive website for showcasing travel pictures. Includes a slideshow coded entirely in Javascript (no Bootstrap at all). By the way, I didn't take these pictures, but I've visited all of these countries!",
+	description: "Responsive website for showcasing travel pictures. Includes a slideshow coded entirely in vanilla Javascript (no Bootstrap at all). By the way, I didn't take these pictures, but I've visited all of these countries!",
 	image: "heroku.png",
 	link: "https://travel-album.herokuapp.com"
 });
@@ -71,23 +78,16 @@ Project.create({
 puts "Creating works in progress"
 Working.create({
 	name: "Rails liar",
-	description: "A version of Liar's Dice on website. Work in progress, currently working on React.js in order to play entire game without refreshing. ps: did you notice the palindrome?",
+	description: "A multi-player version of Liar's Dice. Using a Ruby-On-Rails backend and VueJS front-end. ps: did you notice the palindrome?",
 	image: "rails.png",
 	link: "#"
 })
 
 Working.create({
-	name: "Dorner Design",
-	description: "Website for a hugely famous and popular Interior Designer and Architect: Marie Christine Dorner, my mother...",
-	image: "oneshape.jpg",
-	link: "https://www.dorner-design.com/"
-})
-
-Working.create({
-	name: "Venere mais courtois",
-	description: "Website for brand new newspaper in France.",
-	image: "venere.jpg",
-	link: "#"
+	name: "AX2",
+	description: "Currently working full-time as a JavaScript & TypeScript Developer for a web agency in Montreal. Feel free to visit our website here.",
+	image: "ax2-logo.svg",
+	link: "https://https://ax2.ca/"
 })
 
 puts "created #{Project.all.count} projects"
